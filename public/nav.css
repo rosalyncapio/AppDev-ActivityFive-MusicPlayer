@@ -1,17 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
 /* Header container */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #1a1a2e;
@@ -26,38 +15,54 @@ header {
 /* Logo area */
 .logo {
     display: flex;
-    align-items: center;
+    align-items: center; /* Aligns the image and text vertically */
+    flex: 0; /* Fix the logo to the left */
 }
 
-.logo i {
-    font-size: 28px;
-    margin-right: 10px;
-    color: #00d4ff;
+/* Logo image styling */
+.logo-img {
+    width: 40px; /* Adjust size of the logo image */
+    height: 40px;
+    margin-right: 10px; /* Space between image and text */
+    filter: brightness(0) invert(1); /* Makes the image white */
 }
 
+/* Logo text styling */
 .logo a {
     font-size: 24px;
-    text-decoration: none;
     color: #00d4ff;
+    text-decoration: none;
     font-weight: bold;
+}
+
+.logo a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+/* Navigation container */
+.nav-container {
+    flex: 1; /* Take up the remaining space */
+    display: flex;
+    justify-content: center; /* Center the navigation elements */
 }
 
 /* Navigation links */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px; /* Space between home and search */
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
+/* Home icon styling */
+.home-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1); /* Makes the image white */
 }
 
-.nav-links a:hover {
-    color: #00d4ff;
+.home-icon:hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px #fff); /* Adds a glow on hover */
 }
 
 /* Search bar */
@@ -65,23 +70,26 @@ header {
     display: flex;
     align-items: center;
     background-color: #333;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 25px;
 }
 
-.search i {
-    font-size: 20px;
-    color: white;
-    margin-right: 8px;
+/* Search icon */
+.search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
 }
 
+/* Search input */
 .search input {
     border: none;
     outline: none;
     background: transparent;
     color: white;
     font-size: 16px;
-    width: 200px;
+    width: 180px;
 }
 
 .search input::placeholder {
@@ -93,7 +101,7 @@ header {
     .nav-links {
         display: none;
     }
-    
+
     .menu-btn {
         display: block;
         font-size: 26px;

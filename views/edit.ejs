@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Song</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Edit Song</h1>
+    <form action="/edit/<%= song.id %>" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" value="<%= song.title %>" required><br>
+        <input type="text" name="artist" value="<%= song.artist %>" required><br>
+        <textarea name="lyrics" required><%= song.lyrics %></textarea><br>
+        <p>Current Song: <%= song.file_path %></p>
+        <input type="hidden" name="existingFile" value="<%= song.file_path %>">
+        <input type="file" name="songFile" accept="audio/*"><br>
+        <button type="submit">Update Song</button>
+    </form>
+</body>
+</html>

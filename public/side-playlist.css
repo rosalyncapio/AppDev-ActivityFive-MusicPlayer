@@ -1,23 +1,22 @@
-/**************************** Updated CSS for playlist aligned with the navbar *****************************/
+/**************************** Updated CSS for playlist aligned with the header *****************************/
 .playlist {
   font-family: 'Comfortaa', cursive;
   background: linear-gradient(to bottom, #000000 1%, #1a1a2e 100%);
   color: white;
   position: fixed;
-  right: 10px;
+  left: 0; /* Stick to the left corner */
+  top: 60px;  /* Start below the header (assuming header is 60px tall) */
   width: 300px;
-  top: 60px;
-  bottom: 0;
+  height: calc(100% - 60px);  /* Adjust height considering header height */
   padding-top: 30px;
   padding-left: 15px;
   overflow-y: auto;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5); /* Adjust shadow for left side */
   z-index: 9;
 }
 
 .playlist::-webkit-scrollbar {
   width: 5px;
-  /* Narrower scrollbar for a cleaner look */
 }
 
 .playlist::-webkit-scrollbar-track {

@@ -1,0 +1,118 @@
+/****************** masterPlay means bottom music player - It is divided into two parts ***********************/
+.masterPlay {
+  height: 50px;                      /* Height of the music player */
+  width: 100vw;                      /* Full viewport width */
+  position: fixed;                   /* Fixed position at the bottom */
+  bottom: 0;                         /* Aligns to the bottom of the viewport */
+  left: 0;                           /* Aligns to the left edge of the viewport */
+  border: none;                      /* No border */
+  color: white;                      /* Text color */
+  border-radius: 0;                 /* No rounded corners */
+  background-image: url('/assests/moon.jpg'); /* Background image */
+  display: flex;                     /* Flexbox for alignment */
+  align-items: center;              /* Center items vertically */
+  z-index: 1000;                    /* Ensure it appears above other content */
+}
+
+.masterPlay:hover {
+  background: linear-gradient(#212a35, #030c18); /* Background on hover */
+}
+
+/************************************ left section **************************************/
+.leftside {
+  width: 250px;                     /* Fixed width for the left section */
+}
+
+.leftside img {
+  height: 2rem;                     /* Height of the song cover image */
+  width: 2.5rem;                    /* Width of the song cover image */
+  margin: 12px 7px 7px 34px;        /* Margin around the image */
+  border-radius: 2px;               /* Rounded corners for the image */
+}
+
+.leftside a {
+  color: grey;                      /* Link color */
+}
+
+.leftside .plus-button {
+  color: rgb(138, 126, 126);        /* Color for the plus button */
+  position: relative;               /* Relative positioning for the button */
+  bottom: 18px;                     /* Adjust position */
+  cursor: pointer;                  /* Cursor change on hover */
+}
+
+.leftside .plus-button:hover {
+  color: green;                     /* Color change on hover */
+}
+
+.song-details {
+  display: inline-block;            /* Inline block for song details */
+  margin-top: 16px;                /* Top margin for spacing */
+  vertical-align: top;              /* Aligns to the top */
+  line-height: 14px;                /* Line height for text */
+}
+
+.song-details .song-title {
+  font-size: 13px;                  /* Font size for song title */
+  display: inline-block;            /* Inline block for song title */
+}
+
+.song-details .artist-name {
+  font-size: 9px;                   /* Font size for artist name */
+}
+
+/************************************* middle section *****************************************/
+.middle {
+  display: flex;                    /* Flexbox for the middle section */
+  align-items: center;             /* Center items vertically */
+}
+
+.middle img {
+  width: 16px;                     /* Width for control images */
+  margin: 0px 10px;                /* Margin for spacing */
+  transition: 0.15s;               /* Transition effect */
+}
+
+.middle img:hover {
+  width: 15px;                     /* Slightly reduce size on hover */
+  cursor: pointer;                 /* Cursor change on hover */
+}
+
+audio {
+  width: 100%;                     /* Full width for audio player */
+  height: 30px;                   /* Height for audio player */
+}
+
+audio::-webkit-media-controls-panel {
+  background: linear-gradient(to right, #8693ab, #bdd4e7); /* Background for controls */
+}
+
+audio::-webkit-media-controls-play-button {
+  border-radius: 50%;              /* Rounded play button */
+  margin-left: -8px;               /* Adjust margin */
+}
+
+audio::-webkit-media-controls-play-button:hover {
+  background-color: rgba(48, 113, 134, 0.7); /* Background on hover */
+}
+
+.albums, .artists {
+  margin: 20px;
+  color: white;
+}
+
+.album-container, .artist-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.album, .artist {
+  margin: 10px;
+  text-align: center;
+  width: 120px; /* Adjust as needed */
+}
+
+.album img, .artist img {
+  width: 100%; /* Makes images responsive */
+  border-radius: 8px;
+}
