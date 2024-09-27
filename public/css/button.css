@@ -1,0 +1,31 @@
+.text-left {
+    text-align: left;            /* Align text to the left */
+    margin-left: 20px;          /* Add some left margin for spacing */
+
+}
+
+.btn {
+
+    padding: 10px 20px;          /* Add padding for a better click area */
+    font-size: 1.1em;            /* Increase font size for readability */
+    border: none;                /* Remove default border */
+    border-radius: 25px;        /* Make the button more rounded */
+    cursor: pointer;             /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.btn-primary {
+    background-color: #081021e9; /* Green color for success */
+    color: white;                /* White text color */
+    border: double;
+}
+
+.btn-primary:hover {
+    background-color: #122d49e6;   /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-primary:focus {
+    outline: none;                /* Remove outline for a cleaner look */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Blue outline on focus */
+}

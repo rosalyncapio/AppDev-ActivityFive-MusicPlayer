@@ -1,0 +1,79 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color:transparent;
+}
+
+.modal-content {
+    background-color: rgba(81, 101, 142, 0.731); /* Modal background color */
+    margin: 80px auto; /* Center modal vertically */
+    padding: 20px; /* Add padding inside the modal */
+    border: 1px solid #888;
+    width: 60%; /* Set a smaller width for the modal */
+    max-width: 400px; /* Maximum width for the modal */
+    position: relative; /* Ensure close button can be positioned correctly */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+h2 {
+    display: block; /* Ensure labels stack on top of inputs */
+    font-size: 30px; /* Adjust font size for better visibility */
+    color: #000000; /* Dark color for better contrast */
+    font-weight: bolder;
+    text-align: center;
+    margin:0; /* Space above and below the label */
+}
+/* New styles for labels */
+label {
+    display: block; /* Ensure labels stack on top of inputs */
+    margin: 10px 0 5px; /* Space above and below the label */
+    font-size: 15px; /* Adjust font size for better visibility */
+    color: #000000; /* Dark color for better contrast */
+    font-weight: bolder;
+}
+
+/* Styles for inputs */
+input[type="text"], input[type="file"] {
+    width: 100%; /* Full width for inputs */
+    padding: 5px; /* Add padding for better spacing */
+    margin-bottom: 10px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Button styles */
+.btn-success {
+    padding: 10px 20px;          /* Add padding for a better click area */
+    font-size: 1.1em;            /* Increase font size for readability */
+    border-radius: 25px;        /* Make the button more rounded */
+    cursor: pointer;             /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    background-color: #081021e9; /* Green color for success */
+    color: white;                /* White text color */
+    border: double;
+
+}
+
+.btn-success:hover {
+    background-color: #122d49e6;   /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}

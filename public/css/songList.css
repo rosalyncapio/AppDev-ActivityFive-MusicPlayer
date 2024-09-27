@@ -1,0 +1,69 @@
+body {
+    background-color: #1c1c1c; /* Dark background for the body */
+    color: white;              /* White text color */
+}
+
+.container {
+    display: flex;             /* Flexbox for layout */
+    flex-wrap: wrap;          /* Allow items to wrap into multiple rows */
+    justify-content: space-between; /* Space items evenly */
+    max-width: 1200px;        /* Optional: Set a max width for the container */
+    margin: 0 auto;           /* Center the container horizontally */
+}
+
+.song-item {
+    display: flex;             /* Flexbox for song item layout */
+    align-items: center;       /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+    background-color: #222;    /* Darker background for song items */
+    border-radius: 10px;       /* Rounded corners */
+    padding: 8px;              /* Reduced padding for compactness */
+    margin: 10px;              /* Space between items */
+    width: calc(50% - 50px);   /* Set width for 5 columns, minus margin space */
+    box-sizing: border-box;     /* Include padding and border in width */
+    overflow: hidden;           /* Hide overflow content */
+}
+
+.song-cover {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.song-info {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.song-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap for buttons */
+}
+
+.song-actions button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2em; /* Slightly larger icon size */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.song-actions button:hover {
+    color: #1db954; /* Change color on hover */
+}
+
+
+
+/* Optional: Responsive Design */
+@media (max-width: 768px) {
+    .song-item {
+        width: calc(50% - 20px);  /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .song-item {
+        width: calc(100% - 20px);  /* Single column on mobile */
+    }
+}

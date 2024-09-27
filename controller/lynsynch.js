@@ -1,4 +1,5 @@
 
+const db = require('../config/connect');
 const lynsynchmodel = require('../model/lynsynchmodel');
 
 // Get all songs and render the homepage
@@ -55,19 +56,24 @@ exports.getSongById = (req, res) => {
 // Update an existing song
 exports.updateSong = (req, res) => {
     const songId = req.params.id;
-    const updatedSongData = {
-        title: req.body.title,
-        artist: req.body.artist,
-        image_path: req.body.image_path,  // This should be handled similarly for edit functionality
-        file_path: req.file ? req.file.path : req.body.file_path  // Use new file if uploaded
-    };
+    const { title, artist } = req.body; // Assuming you're not updating the file if it's not provided
 
-    lynsynchmodel.updateSong(songId, updatedSongData, (err, result) => {
-        if (err) {
-            console.error('Error updating song: ', err);
+    // Check if a new song file is being uploaded
+    let songFilePath = null;
+    if (req.file) {
+        songFilePath = req.file.path; // Path to the new uploaded file
+    }
+
+    // Example query to update the song
+    const query = 'UPDATE songs SET title = ?, artist = ?' + (songFilePath ? ', file_path = ?' : '') + ' WHERE id = ?';
+    const values = songFilePath ? [title, artist, songFilePath, songId] : [title, artist, songId];
+
+    db.query(query, values, (error, results) => {
+        if (error) {
+            console.error('Error updating song:', error);
             return res.status(500).send('Error updating song');
         }
-        res.redirect('/');
+        res.redirect('/'); // Redirect after successful update
     });
 };
 
@@ -75,11 +81,14 @@ exports.updateSong = (req, res) => {
 exports.deleteSong = (req, res) => {
     const songId = req.params.id;
 
-    lynsynchmodel.deleteSong(songId, (err, result) => {
-        if (err) {
-            console.error('Error deleting song: ', err);
+    // Assuming you have a function to execute a SQL query
+    const query = 'DELETE FROM songs WHERE id = ?';
+
+    db.query(query, [songId], (error, results) => {
+        if (error) {
+            console.error('Error deleting song:', error);
             return res.status(500).send('Error deleting song');
         }
-        res.redirect('/');
+        res.redirect('/'); // Redirect to the main page after deletion
     });
 };

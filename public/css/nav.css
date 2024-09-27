@@ -1,0 +1,122 @@
+/* Header container */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a2e;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo area */
+.logo {
+    display: flex;
+    align-items: center; /* Aligns the image and text vertically */
+    flex: 0; /* Fix the logo to the left */
+}
+
+/* Logo image styling */
+.logo-img {
+    width: 40px; /* Adjust size of the logo image */
+    height: 40px;
+    margin-right: 10px; /* Space between image and text */
+    filter: brightness(0) invert(1); /* Makes the image white */
+}
+
+/* Logo text styling */
+.logo a {
+    font-size: 24px;
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+/* Navigation container */
+.nav-container {
+    flex: 1; /* Take up the remaining space */
+    display: flex;
+    justify-content: center; /* Center the navigation elements */
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between home and search */
+}
+
+/* Home icon styling */
+.home-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1); /* Makes the image white */
+}
+
+.home-icon:hover {
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px #fff); /* Adds a glow on hover */
+}
+
+/* Search bar */
+/* Search bar */
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #444; /* Background color */
+    padding: 5px 10px; /* Reduce vertical padding for a smaller height */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Search bar hover effect */
+.search:hover {
+    background-color: #555; /* Change background on hover */
+}
+
+/* Search icon */
+.search-icon {
+    width: 20px; /* Icon size */
+    height: 20px;
+    margin-right: 5px; /* Space between icon and input */
+    filter: brightness(0) invert(1); /* Makes the icon white */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+}
+
+/* Search icon hover effect */
+.search-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* Search input */
+.search input[id="search"] {
+    border: none; /* No border */
+    outline: none; /* No outline */
+    background: transparent; /* Transparent background */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    width: 150px; /* Adjusted width */
+    padding: 3px; /* Reduced padding for a smaller height */
+    border-radius: 25px; /* Rounded edges */
+}
+
+/* Placeholder color */
+.search input::placeholder {
+    color: #aaa; /* Placeholder color */
+    text-align: center;
+}
+
+/* Adjust the width of the input on focus */
+.search input[id="search"]:focus {
+    width: 180px; /* Expand width on focus */
+    transition: width 0.3s ease; /* Smooth transition for width change */
+}
+    
